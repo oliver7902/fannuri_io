@@ -2568,6 +2568,146 @@ a.logo:hover{
   padding: 100px 20px;
 }
 
+.embed-responsive {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 비율 */
+  height: 0;
+  overflow: hidden;
+}
+
+.embed-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+/* 전체 슬라이더 영역 */
+._gallery_wrap {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* 각 이미지 아이템 컨테이너 */
+._item.item_gallary {
+  position: relative;
+  transition: transform 0.3s ease;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+._item.item_gallary:hover {
+  transform: scale(1.02);
+}
+
+/* 이미지 백그라운드 스타일 */
+.img_wrap {
+  width: 100%;
+  height: 325px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  position: relative;
+}
+
+/* 오버레이 효과 */
+.slide_overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.4), transparent);
+  border-radius: 10px;
+  z-index: 1;
+}
+
+/* 텍스트 래퍼 */
+.text_wrap {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  z-index: 2;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* 텍스트 안에 제목을 보이게 하려면 */
+.text_wrap .title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 썸네일 네비게이션 버튼 */
+.owl-thumb-item {
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.owl-thumb-item:hover {
+  transform: scale(1.05);
+  outline: 2px solid #a86cff;
+}
+
+/* 네비게이션 화살표 숨기기 (필요 시) */
+.owl-nav .owl-prev,
+.owl-nav .owl-next {
+  display: none !important;
+}
+
+/* 반응형 처리 */
+@media (max-width: 768px) {
+  .img_wrap {
+    height: 200px;
+  }
+
+  .text_wrap {
+    font-size: 14px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .text_wrap .title {
+    font-size: 16px;
+  }
+}
+
+.collection-list {
+  margin-top: 90px;
+  white-space: nowrap;
+  animation: moveRighttoLeft 15s ease-in-out infinite;
+  position: relative;
+  display: inline-flex;
+  gap: 20px;
+}
+
+.collection-list.reverse {
+  animation: moveLeftoRight 15s ease-in-out infinite;
+}
+
+.collection-list>li {
+  width: 16vw;
+}
+
+.collection.row-1 {
+  /* margin-left: -125px; */
+}
+
+.collection-list .card {
+  border-radius: 75px;
+  overflow: hidden;
+  border-radius: 10%;
+}
+
+
 
 .page-section,
 .small-section{
@@ -2649,6 +2789,7 @@ a.logo:hover{
 .bg-dark-lighter{
     background-color: #1b1b1b !important;
 }
+
 .bg-dark.light-content{
     background-color: #1b1b1b !important;
 }
@@ -2882,7 +3023,7 @@ a.logo:hover{
 .bg-cyan{ background-color: #27c5c3 !important; }
 .bg-green{ background-color: #58bf44 !important; }
 .bg-blue{ background-color: #43a5de !important; }
-.bg-purple{ background-color: #375acc !important; }
+.bg-purple{ background-color: #27113b !important; }
 .bg-red{ background-color: #f1273c !important; }
 
 .section-title{
@@ -2898,6 +3039,13 @@ a.logo:hover{
     font-weight: 400; /*500*/ 
     color: #757575;
 }
+.section-title-descr_2{
+    font-family: var(--font-global-alt);
+    font-size: 30px;
+    font-weight: 400; /*500*/
+    color: #ffffff;
+}
+
 .light-content .section-title-descr{
     color: #bbb;
 }
@@ -7036,7 +7184,33 @@ table.shopping-cart-table tr td{
 	background: #00C4F4;
 	border-color: #00C4F4;
 }
+@keyframes moveRighttoLeft {
+  0% {
+    transform: translateX(0%);
+  }
 
+  50% {
+    transform: translateX(-36%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes moveLeftoRight {
+  0% {
+    transform: translateX(-36%);
+  }
+
+  50% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-36%);
+  }
+}
 
 
 
